@@ -23,7 +23,7 @@ project "RavenEngine"
 		systemversion "latest"
 
 		defines {
-		
+			"RAVEN_PLATFORM_WINDOWS"
 		}
 
 		postbuildcommands { ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox") }
@@ -53,7 +53,7 @@ project "Sandbox"
 		systemversion "latest"
 
 		defines {
-		
+			"RAVEN_PLATFORM_WINDOWS"
 		}
 
 
