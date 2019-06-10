@@ -12,11 +12,19 @@
     <ClInclude Include="src\Raven\Core.h">
       <Filter>Raven</Filter>
     </ClInclude>
+    <ClInclude Include="src\Raven\EntryPoint.h">
+      <Filter>Raven</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Raven\Log.h">
+      <Filter>Raven</Filter>
+    </ClInclude>
     <ClInclude Include="src\RavenEngine.h" />
-    <ClInclude Include="src\Raven\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Raven\Application.cpp">
+      <Filter>Raven</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Raven\Log.cpp">
       <Filter>Raven</Filter>
     </ClCompile>
   </ItemGroup>

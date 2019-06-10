@@ -2,6 +2,11 @@
 
 
 #ifdef RAVEN_PLATFORM_WINDOWS
-	#define RAVEN_EXPORT __declspec(dllexport)
-	#define RAVEN_IMPORT __declspec(dllimport)
+		#ifdef RAVEN_BUILD_DLL
+			#define RAVEN_API __declspec(dllexport)
+		#else
+			#define RAVEN_API __declspec(dllimport)
+		#endif
+#else
+	#error Hazel only supports Windows!
 #endif

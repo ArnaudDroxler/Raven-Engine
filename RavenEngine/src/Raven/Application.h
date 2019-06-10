@@ -5,7 +5,7 @@
 namespace Raven 
 {
 
-	class RAVEN_EXPORT Application
+	class RAVEN_API Application
 	{
 
 	public:
