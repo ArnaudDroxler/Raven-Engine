@@ -14,6 +14,9 @@ project "RavenEngine"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-obj/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "ravenpch.h"
+	pchsource "Raven/src/ravenpch.cpp"
+
     files { "%{prj.name}/src/**.h", "%{prj.name}/src/**.cpp" }
 	
 	includedirs

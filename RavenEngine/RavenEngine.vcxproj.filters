@@ -19,6 +19,7 @@
       <Filter>Raven</Filter>
     </ClInclude>
     <ClInclude Include="src\RavenEngine.h" />
+    <ClInclude Include="src\ravenpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Raven\Application.cpp">
@@ -27,5 +28,6 @@
     <ClCompile Include="src\Raven\Log.cpp">
       <Filter>Raven</Filter>
     </ClCompile>
+    <ClCompile Include="src\ravenpch.cpp" />
   </ItemGroup>
 </Project>

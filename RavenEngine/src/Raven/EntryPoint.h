@@ -2,7 +2,6 @@
 
 #ifdef RAVEN_PLATFORM_WINDOWS
 
-#include <stdio.h>
 
 extern Raven::Application*  Raven::CreateApplication();
 

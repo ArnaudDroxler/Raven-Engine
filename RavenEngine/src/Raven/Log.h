@@ -1,6 +1,7 @@
 #pragma once
 
-#include <memory.h>
+#include "ravenpch.h"
+
 #include "Core.h"
 #include "spdlog\spdlog.h"
 #include "spdlog\fmt\ostr.h"
