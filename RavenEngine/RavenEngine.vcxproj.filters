@@ -4,30 +4,48 @@
     <Filter Include="Raven">
       <UniqueIdentifier>{A10D020E-0D22-2ABF-D6A3-CD1E427726F0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Raven\Events">
+      <UniqueIdentifier>{65FA6DB0-515D-FD54-FAE2-350BE624C9D7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Raven\Application.h">
-      <Filter>Raven</Filter>
+    <ClInclude Include="src\Raven\Events\ApplicationEvent.h">
+      <Filter>Raven\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Raven\Core.h">
-      <Filter>Raven</Filter>
+    <ClInclude Include="src\Raven\Events\Event.h">
+      <Filter>Raven\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Raven\EntryPoint.h">
-      <Filter>Raven</Filter>
+    <ClInclude Include="src\Raven\Events\KeyEvent.h">
+      <Filter>Raven\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Raven\Log.h">
-      <Filter>Raven</Filter>
+    <ClInclude Include="src\Raven\Events\MouseEvent.h">
+      <Filter>Raven\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\RavenEngine.h" />
     <ClInclude Include="src\ravenpch.h" />
+    <ClInclude Include="src\Raven\Core\Application.h">
+      <Filter>Raven</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Raven\Core\Core.h">
+      <Filter>Raven</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Raven\Core\EntryPoint.h">
+      <Filter>Raven</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Raven\Core\Debug.h">
+      <Filter>Raven</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Raven\Core\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Raven\Application.cpp">
-      <Filter>Raven</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Raven\Log.cpp">
-      <Filter>Raven</Filter>
-    </ClCompile>
     <ClCompile Include="src\ravenpch.cpp" />
+    <ClCompile Include="src\Raven\Core\Application.cpp">
+      <Filter>Raven</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Raven\Core\Debug.cpp">
+      <Filter>Raven</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

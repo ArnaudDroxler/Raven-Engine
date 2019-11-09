@@ -9,8 +9,9 @@
 
 #include <string>
 #include <sstream>
-#include <vector>
+#include <vector> 
 
+#include "Raven/Core/Debug.h"
 
 #ifdef RAVEN_PLATFORM_WINDOWS
 	#include <Windows.h>

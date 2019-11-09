@@ -2,8 +2,11 @@
 
 
 
-#include "Raven/Application.h"
+#include "Raven/Core/Application.h"
 
-#include "Raven/EntryPoint.h"
+#include "Raven/Core/EntryPoint.h"
 
-#include "Raven/Log.h"
+#include "Raven/Core/Debug.h"
+
+
+

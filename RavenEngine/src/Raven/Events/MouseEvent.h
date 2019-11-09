@@ -1,0 +1,103 @@
+#pragma once
+
+#include "ravenpch.h"
+
+#include "Event.h"
+
+namespace Raven
+{
+	class RAVEN_API MouseMovedEvent : public Event
+	{
+	public:
+		MouseMovedEvent(float mouseX, float mouseY) : mouseX(mouseX), mouseY(mouseY) {}
+
+		inline float GetMouseX() { return mouseX; }
+		inline float GetMouseY() { return mouseY; }
+
+		static EventType GetStaticType() { return EventType::MouseMoved; }
+		EventType GetEventType() const override { return GetStaticType(); }
+		const char * GetName() const override { return "MouseMoved"; }
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "MouseMovedEvent:  (" << mouseX << "," << mouseY << ")";
+			return ss.str();
+		}
+
+		int GetCategoryFlags() const override { return EventCategoryMouse | EventCategoryInput; }
+
+	private:
+		float mouseX, mouseY;
+	};
+
+	class RAVEN_API MouseScrolledEvent : public Event
+	{
+	public:
+
+		MouseScrolledEvent(float xOffset, float yOffset) : xOffset(xOffset), yOffset(yOffset) {}
+
+		static EventType GetStaticType() { return EventType::MouseScrolled; }
+		EventType GetEventType() const override { return GetStaticType(); }
+		const char * GetName() const override { return "MouseScrolled"; }
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "MouseScrolledEvent:  (" << xOffset << "," << yOffset << ")";
+			return ss.str();
+		}
+
+		int GetCategoryFlags() const override { return EventCategoryMouse | EventCategoryInput; }
+
+	private:
+		float xOffset, yOffset;
+	};
+
+	class RAVEN_API MouseButtonEvent : public Event
+	{
+	public:
+		inline int GetMouseButton() const { return buttonId; }
+
+		int GetCategoryFlags() const override { return EventCategoryMouseButton | EventCategoryInput; }
+
+	protected:
+		MouseButtonEvent(int buttonId) : buttonId(buttonId) {}
+
+		int buttonId;
+	};
+
+	class RAVEN_API MouseButtonPressedEvent : public MouseButtonEvent
+	{
+	public:
+		MouseButtonPressedEvent(int buttonId) : MouseButtonEvent(buttonId) {}
+
+		static EventType GetStaticType() { return EventType::MouseButtonPressed; }
+		EventType GetEventType() const override { return GetStaticType(); }
+		const char * GetName() const override { return "MouseButtonPressed"; }
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "MouseButtonPressedEvent: " << buttonId;
+			return ss.str();
+		}
+	};
+
+	class RAVEN_API MouseButtonReleasedEvent : public MouseButtonEvent
+	{
+	public:
+		MouseButtonReleasedEvent(int buttonId) : MouseButtonEvent(buttonId) {}
+
+		static EventType GetStaticType() { return EventType::MouseButtonReleased; }
+		EventType GetEventType() const override { return GetStaticType(); }
+		const char * GetName() const override { return "MouseButtonReleased"; }
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "MouseButtonReleasedEvent: " << buttonId;
+			return ss.str();
+		}
+	};
+}

@@ -6,6 +6,15 @@ workspace "RavenEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "RavenEngine/vendor/GLFW/include"
+
+
+group "Dependencies"
+	include "RavenEngine/vendor/GLFW"
+
+group ""
+
 project "RavenEngine"
 	location "RavenEngine"
 	language "C++"
@@ -23,12 +32,20 @@ project "RavenEngine"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}",
 	}
 
 		
 	defines
 	{
 		"_CRT_SECURE_NO_WARNINGS"
+	}
+
+	
+	links 
+	{ 
+		"GLFW",
+		"opengl32.lib"
 	}
 
 
