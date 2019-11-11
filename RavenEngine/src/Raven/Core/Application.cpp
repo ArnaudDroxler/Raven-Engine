@@ -5,7 +5,7 @@
 #include "Raven/Events/Event.h"
 
 #include <GLFW/glfw3.h>
-
+#include <glad/glad.h>
 
 namespace Raven 
 {
@@ -15,8 +15,6 @@ namespace Raven
 		Raven::Debug::Init();
 
 		RAVEN_CORE_INFO("Raven Engine Init");
-
-		//WindowProperty windowProperty("Toto", 450, 650);
 
 		window = std::unique_ptr<Window>(Window::Create());
 		window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));

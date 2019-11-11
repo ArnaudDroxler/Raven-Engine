@@ -8,10 +8,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "RavenEngine/vendor/GLFW/include"
+IncludeDir["GLAD"] = "RavenEngine/vendor/GLAD/include"
 
 
 group "Dependencies"
 	include "RavenEngine/vendor/GLFW"
+	include "RavenEngine/vendor/GLAD"
 
 group ""
 
@@ -33,6 +35,7 @@ project "RavenEngine"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.GLAD}"
 	}
 
 		
@@ -45,6 +48,7 @@ project "RavenEngine"
 	links 
 	{ 
 		"GLFW",
+		"GLAD",
 		"opengl32.lib"
 	}
 
@@ -57,6 +61,7 @@ project "RavenEngine"
 		defines {
 			"RAVEN_PLATFORM_WINDOWS",
 			"RAVEN_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands { ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox") }

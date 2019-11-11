@@ -5,7 +5,7 @@
 #include "Raven/Events/KeyEvent.h"
 #include "Raven/Events/MouseEvent.h"
 #include "Raven/Events/ApplicationEvent.h"
-
+#include "glad/glad.h"
 
 
 namespace Raven
@@ -83,6 +83,9 @@ namespace Raven
 		GLFWWindowCount++;
 
 		glfwMakeContextCurrent(window);
+
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		RAVEN_CORE_ASSERT(status, "Could not intialize GLAD!");
 
 		glfwSetWindowUserPointer(window, &windowData);
 
