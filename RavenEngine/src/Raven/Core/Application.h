@@ -1,10 +1,12 @@
 #pragma once
 
-#include "Core.h"
+#include "Raven/Core/Core.h"
 
-#include "Window.h"
+#include "Raven/Core/Window.h"
 #include "Raven/Events/Event.h"
 #include "Raven/Events/ApplicationEvent.h"
+
+#include "Raven/Core/LayerStack.h"
 
 namespace Raven 
 {
@@ -18,6 +20,9 @@ namespace Raven
 
 		void OnEvent(Event& e);
 		
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
+
 		void Run();
 
 
@@ -27,6 +32,8 @@ namespace Raven
 		bool OnWindowResize(WindowResizeEvent& e);
 
 		std::unique_ptr<Window> window;
+		LayerStack layerStack;
+
 
 		bool running;
 		bool minimized;

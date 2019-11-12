@@ -36,6 +36,24 @@ namespace Raven
 
 		RAVEN_CORE_INFO(e);
 
+		for (auto it = layerStack.end(); it != layerStack.begin(); )
+		{
+			--it;
+			(*it)->OnEvent(e);
+			if (e.Handled)
+				break;
+		}
+
+	}
+
+	void Application::PushLayer(Layer * layer)
+	{
+		layerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer * layer)
+	{
+		layerStack.PushOverlay(layer);
 	}
 
 	void Application::Run()
@@ -43,6 +61,8 @@ namespace Raven
 
 		while (running)
 		{
+			for (Layer* layer : layerStack)
+				layer->OnUpdate();
 
 			window->OnUpdate();
 
