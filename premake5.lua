@@ -9,7 +9,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "RavenEngine/vendor/GLFW/include"
 IncludeDir["GLAD"] = "RavenEngine/vendor/GLAD/include"
-IncludeDir["ImGui"] = "RavenEngine/vendor/imgui"
+IncludeDir["ImGui"] = "RavenEngine/vendor/imgui/include"
 
 group "Dependencies"
 	include "RavenEngine/vendor/GLFW"
