@@ -1,6 +1,6 @@
 
 #include "RavenEngine.h"
-
+#include "Raven/Core/EntryPoint.h"
 
 class ExempleLayer : public Raven::Layer
 {
@@ -12,6 +12,8 @@ public:
 
 	void OnEvent(Raven::Event& event) {
 
+		std::cout << event.GetName();
+		RAVEN_CLIENT_TRACE("Yolo");
 		RAVEN_CLIENT_TRACE(event);
 	}
 

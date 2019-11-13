@@ -6,7 +6,7 @@
 namespace Raven
 {
 
-	class Layer
+	class RAVEN_API Layer
 	{
 	public:
 		Layer(const std::string& debugName);

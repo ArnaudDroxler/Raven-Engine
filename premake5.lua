@@ -9,11 +9,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "RavenEngine/vendor/GLFW/include"
 IncludeDir["GLAD"] = "RavenEngine/vendor/GLAD/include"
-
+IncludeDir["ImGui"] = "RavenEngine/vendor/imgui"
 
 group "Dependencies"
 	include "RavenEngine/vendor/GLFW"
 	include "RavenEngine/vendor/GLAD"
+	include "RavenEngine/vendor/imgui"
 
 group ""
 
@@ -35,7 +36,8 @@ project "RavenEngine"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.GLAD}"
+		"%{IncludeDir.GLAD}",
+		"%{IncludeDir.ImGui}"
 	}
 
 		
@@ -49,6 +51,7 @@ project "RavenEngine"
 	{ 
 		"GLFW",
 		"GLAD",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -58,7 +61,8 @@ project "RavenEngine"
 		staticruntime "On"
 		systemversion "latest"
 
-		defines {
+		defines 
+		{
 			"RAVEN_PLATFORM_WINDOWS",
 			"RAVEN_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
@@ -68,6 +72,7 @@ project "RavenEngine"
 
 	filter "configurations:Debug"
 		defines "RAVEN_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 
@@ -96,11 +101,13 @@ project "Sandbox"
 		staticruntime "On"
 		systemversion "latest"
 
-		defines {
+		defines 
+		{
 			"RAVEN_PLATFORM_WINDOWS"
 		}
 
 
 	filter "configurations:Debug"
 		defines "RAVEN_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"

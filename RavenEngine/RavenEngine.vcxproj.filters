@@ -33,6 +33,12 @@
     <ClInclude Include="src\Raven\Core\EntryPoint.h">
       <Filter>Raven\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Raven\Core\Layer.h">
+      <Filter>Raven\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Raven\Core\LayerStack.h">
+      <Filter>Raven\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Raven\Core\Window.h">
       <Filter>Raven\Core</Filter>
     </ClInclude>
@@ -50,12 +56,6 @@
     </ClInclude>
     <ClInclude Include="src\RavenEngine.h" />
     <ClInclude Include="src\ravenpch.h" />
-    <ClInclude Include="src\Raven\Core\LayerStack.h">
-      <Filter>Raven\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Raven\Core\Layer.h">
-      <Filter>Raven\Core</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
@@ -67,12 +67,12 @@
     <ClCompile Include="src\Raven\Core\Debug.cpp">
       <Filter>Raven\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\ravenpch.cpp" />
-    <ClCompile Include="src\Raven\Core\LayerStack.cpp">
-      <Filter>Raven\Core</Filter>
-    </ClCompile>
     <ClCompile Include="src\Raven\Core\Layer.cpp">
       <Filter>Raven\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Raven\Core\LayerStack.cpp">
+      <Filter>Raven\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ravenpch.cpp" />
   </ItemGroup>
 </Project>
