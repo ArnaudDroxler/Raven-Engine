@@ -25,6 +25,9 @@ namespace Raven
 
 		void Run();
 
+		inline Window& GetWindow() { return *window; }
+
+		inline static Application& Get() { return *Instance; }
 
 	private: 
 
@@ -34,6 +37,7 @@ namespace Raven
 		std::unique_ptr<Window> window;
 		LayerStack layerStack;
 
+		static Application* Instance;
 
 		bool running;
 		bool minimized;

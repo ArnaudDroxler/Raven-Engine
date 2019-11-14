@@ -10,9 +10,14 @@
 namespace Raven 
 {
 
+	Application* Application::Instance = nullptr;
+
 	Application::Application()
 	{
 		Raven::Debug::Init();
+
+		RAVEN_CORE_ASSERT(!Instance, "Application already exists!");
+		Instance = this;
 
 		RAVEN_CORE_INFO("Raven Engine Init");
 
