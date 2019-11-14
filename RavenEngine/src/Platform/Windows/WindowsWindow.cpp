@@ -39,13 +39,7 @@ namespace Raven
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-
-
-		glClearColor(1.0, 0.0, 1.0, 1.0);
-
 		glfwSwapBuffers(window);
-
-
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)

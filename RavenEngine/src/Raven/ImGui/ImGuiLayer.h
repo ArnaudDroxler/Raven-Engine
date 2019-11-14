@@ -1,6 +1,9 @@
 #pragma once
 #include "Raven/Core/Layer.h"
-
+#include "Raven/Events/Event.h"
+#include "Raven/Events/ApplicationEvent.h"
+#include "Raven/Events/KeyEvent.h"
+#include "Raven/Events/MouseEvent.h"
 
 namespace Raven
 {
@@ -17,7 +20,19 @@ namespace Raven
 		void OnEvent(Event&  event);
 
 	private:
-		float m_Time = 0.0f;
+
+		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
+		bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
+		bool OnMouseScrolledEvent(MouseScrolledEvent& e);
+		bool OnMouseMovedEvent(MouseMovedEvent& e);
+
+		bool OnKeyPressedEvent(KeyPressedEvent& e);
+		bool OnKeyReleasedEvent(KeyReleasedEvent& e);
+		bool OnKeyTypedEvent(KeyTypedEvent& e);
+
+		bool OnWindowResizeEvent(WindowResizeEvent& e);
+
+		float lastTime = 0.0f;
 	};
 
 

@@ -41,6 +41,11 @@ namespace Raven
 		EventType GetEventType() const override { return GetStaticType(); }
 		const char * GetName() const override { return "MouseScrolled"; }
 
+
+		inline float GetX() { return xOffset; }
+		inline float GetY() { return yOffset; }
+
+
 		std::string ToString() const override
 		{
 			std::stringstream ss;

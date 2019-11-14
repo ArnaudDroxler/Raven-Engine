@@ -69,6 +69,8 @@ namespace Raven
 		EventType GetEventType() const override { return GetStaticType(); }
 		const char * GetName() const override { return "KeyTyped"; }
 
+		inline int GetKeyCode() { return keyCode; }
+
 		std::string ToString() const override
 		{
 			std::stringstream ss;

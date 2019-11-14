@@ -66,6 +66,9 @@ namespace Raven
 
 		while (running)
 		{
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+
 			for (Layer* layer : layerStack)
 				layer->OnUpdate();
 
