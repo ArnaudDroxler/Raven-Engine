@@ -38,7 +38,6 @@ namespace Raven
 
 		virtual void* GetNativeWindow() const = 0;
 
-	
 		virtual void SetEventCallback(const EventCallback& callback) = 0;
 
 		static Window* Create(const WindowProperty& props = WindowProperty());

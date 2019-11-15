@@ -10,13 +10,15 @@ public:
 
 	}
 
-	void OnEvent(Raven::Event& event) {
+	void OnEvent(Raven::Event& event) 
+	{
 
-		std::cout << event.GetName();
-		RAVEN_CLIENT_TRACE("Yolo");
-		RAVEN_CLIENT_TRACE(event);
 	}
 
+	void OnUpdate() 
+	{
+		RAVEN_CLIENT_INFO(Raven::Input::GetMousePosX());
+	}
 
 private:
 
@@ -35,6 +37,8 @@ public:
 	{
 
 	}
+
+
 
 };
 

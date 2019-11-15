@@ -68,6 +68,8 @@
     <ClInclude Include="src\Raven\ImGui\ImGuiLayer.h">
       <Filter>Raven\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Raven\Core\Input.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
@@ -92,5 +94,6 @@
     <ClCompile Include="src\Raven\ImGui\ImGuiLayer.cpp">
       <Filter>Raven\ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

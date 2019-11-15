@@ -39,8 +39,6 @@ namespace Raven
 		dispatcher.Dispatch<WindowCloseEvent>(std::bind(&Application::OnWindowClose, this, std::placeholders::_1));
 		dispatcher.Dispatch<WindowResizeEvent>(std::bind(&Application::OnWindowResize, this, std::placeholders::_1));
 
-		RAVEN_CORE_INFO(e);
-
 		for (auto it = layerStack.end(); it != layerStack.begin(); )
 		{
 			--it;
