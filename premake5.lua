@@ -10,6 +10,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "RavenEngine/vendor/GLFW/include"
 IncludeDir["GLAD"] = "RavenEngine/vendor/GLAD/include"
 IncludeDir["ImGui"] = "RavenEngine/vendor/imgui"
+IncludeDir["glm"] = "RavenEngine/vendor/glm"
 
 group "Dependencies"
 	include "RavenEngine/vendor/GLFW"
@@ -37,7 +38,8 @@ project "RavenEngine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 		
@@ -91,6 +93,7 @@ project "Sandbox"
 		"RavenEngine/src",
 		"RavenEngine/vendor/spdlog/include",
 		"RavenEngine/vendor",
+		"%{IncludeDir.glm}"
 	}
 
 

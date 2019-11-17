@@ -48,10 +48,16 @@
     <ClInclude Include="src\Raven\Core\Input.h">
       <Filter>Raven\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Raven\Core\KeyboardKeyCode.h">
+      <Filter>Raven\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Raven\Core\Layer.h">
       <Filter>Raven\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Raven\Core\LayerStack.h">
+      <Filter>Raven\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Raven\Core\MouseKeyCode.h">
       <Filter>Raven\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Raven\Core\Window.h">
@@ -74,8 +80,6 @@
     </ClInclude>
     <ClInclude Include="src\RavenEngine.h" />
     <ClInclude Include="src\ravenpch.h" />
-    <ClInclude Include="src\Raven\Core\KeyboardKeyCode.h" />
-    <ClInclude Include="src\Raven\Core\MouseKeyCode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRender.cpp">
