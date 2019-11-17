@@ -7,8 +7,10 @@
 #include "Raven/Core/Layer.h"
 #include "Raven/Core/Debug.h"
 #include "Raven/Events/Event.h"
-#include "Raven/Core/Input.h"
 
+#include "Raven/Core/Input.h"
+#include "Raven/Core/KeyboardKeyCode.h"
+#include "Raven/Core/MouseKeyCode.h"
 
 #include "Raven/ImGui/ImGuiLayer.h"
 

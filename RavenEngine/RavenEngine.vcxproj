@@ -15,7 +15,7 @@
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>RavenEngine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -106,16 +106,18 @@
     <ClInclude Include="src\Raven\Core\Debug.h" />
     <ClInclude Include="src\Raven\Core\EntryPoint.h" />
     <ClInclude Include="src\Raven\Core\Input.h" />
+    <ClInclude Include="src\Raven\Core\KeyboardKeyCode.h" />
     <ClInclude Include="src\Raven\Core\Layer.h" />
     <ClInclude Include="src\Raven\Core\LayerStack.h" />
+    <ClInclude Include="src\Raven\Core\MouseKeyCode.h" />
     <ClInclude Include="src\Raven\Core\Window.h" />
     <ClInclude Include="src\Raven\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Raven\Events\Event.h" />
     <ClInclude Include="src\Raven\Events\KeyEvent.h" />
     <ClInclude Include="src\Raven\Events\MouseEvent.h" />
+    <ClInclude Include="src\Raven\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\RavenEngine.h" />
     <ClInclude Include="src\ravenpch.h" />
-    <ClInclude Include="src\Raven\ImGui\ImGuiLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRender.cpp" />
@@ -125,10 +127,10 @@
     <ClCompile Include="src\Raven\Core\Debug.cpp" />
     <ClCompile Include="src\Raven\Core\Layer.cpp" />
     <ClCompile Include="src\Raven\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Raven\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\ravenpch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Raven\ImGui\ImGuiLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
