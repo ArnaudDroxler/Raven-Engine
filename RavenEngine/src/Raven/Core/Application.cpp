@@ -24,6 +24,8 @@ namespace Raven
 		window = std::unique_ptr<Window>(Window::Create());
 		window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
 
+		imGuiLayer = new ImGuiLayer();
+		PushOverlay(imGuiLayer);
 	}
 
 
@@ -69,6 +71,11 @@ namespace Raven
 
 			for (Layer* layer : layerStack)
 				layer->OnUpdate();
+
+			imGuiLayer->Begin();
+			for (Layer* layer : layerStack)
+				layer->OnImGUIRender();
+			imGuiLayer->End();
 
 			window->OnUpdate();
 

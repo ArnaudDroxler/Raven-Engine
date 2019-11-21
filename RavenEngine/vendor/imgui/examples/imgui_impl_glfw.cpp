@@ -575,7 +575,7 @@ static void ImGui_ImplGlfw_SetWindowPos(ImGuiViewport* viewport, ImVec2 pos)
     glfwSetWindowPos(data->Window, (int)pos.x, (int)pos.y);
 }
 
-static ImVec2 F(ImGuiViewport* viewport)
+static ImVec2 ImGui_ImplGlfw_GetWindowSize(ImGuiViewport* viewport)
 {
     ImGuiViewportDataGlfw* data = (ImGuiViewportDataGlfw*)viewport->PlatformUserData;
     int w = 0, h = 0;

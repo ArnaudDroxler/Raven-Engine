@@ -5,6 +5,7 @@
 #include "Raven/Core/Window.h"
 #include "Raven/Events/Event.h"
 #include "Raven/Events/ApplicationEvent.h"
+#include "Raven/ImGui/ImGuiLayer.h"
 
 #include "Raven/Core/LayerStack.h"
 
@@ -36,6 +37,7 @@ namespace Raven
 
 		std::unique_ptr<Window> window;
 		LayerStack layerStack;
+		ImGuiLayer* imGuiLayer;
 
 		static Application* Instance;
 

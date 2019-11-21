@@ -14,25 +14,14 @@ namespace Raven
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		void OnAttach();
-		void OnDetach();
-		void OnUpdate();
-		void OnEvent(Event&  event);
+		virtual void OnAttach() override;
+		virtual void OnDetach() override;
 
-	private:
+		virtual void OnImGUIRender() override;
 
-		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
-		bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
-		bool OnMouseScrolledEvent(MouseScrolledEvent& e);
-		bool OnMouseMovedEvent(MouseMovedEvent& e);
+		void Begin();
+		void End();
 
-		bool OnKeyPressedEvent(KeyPressedEvent& e);
-		bool OnKeyReleasedEvent(KeyReleasedEvent& e);
-		bool OnKeyTypedEvent(KeyTypedEvent& e);
-
-		bool OnWindowResizeEvent(WindowResizeEvent& e);
-
-		float lastTime = 0.0f;
 	};
 
 

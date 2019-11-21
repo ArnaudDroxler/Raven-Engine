@@ -17,8 +17,6 @@ public:
 
 	void OnUpdate() 
 	{
-		RAVEN_CLIENT_INFO(Raven::Input::GetKeyDown(RAVEN_KEY_D));
-
 
 	}
 
@@ -32,7 +30,6 @@ public:
 	SandboxApp()
 	{
 		PushLayer(new ExempleLayer());
-		PushOverlay(new Raven::ImGuiLayer());
 	}
 
 	~SandboxApp()
