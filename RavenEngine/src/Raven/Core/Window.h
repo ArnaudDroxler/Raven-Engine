@@ -19,7 +19,7 @@ namespace Raven
 
 	};
 
-	class RAVEN_API Window
+	class  Window
 	{
 	public:
 

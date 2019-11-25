@@ -1,6 +1,7 @@
 
 #include "RavenEngine.h"
 #include "Raven/Core/EntryPoint.h"
+#include "imgui/imgui.h"
 
 class ExempleLayer : public Raven::Layer
 {
@@ -15,6 +16,11 @@ public:
 
 	}
 
+	void OnImGUIRender() 
+	{
+		ImGui::ShowMetricsWindow();
+		
+	}
 	void OnUpdate() 
 	{
 

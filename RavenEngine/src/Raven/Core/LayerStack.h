@@ -7,7 +7,7 @@
 
 namespace Raven 
 {
-	class RAVEN_API LayerStack
+	class  LayerStack
 	{
 	public:
 		LayerStack() = default;

@@ -79,6 +79,9 @@
     <ClInclude Include="src\ravenpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\BuildImGUI.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
@@ -101,6 +104,5 @@
       <Filter>Raven\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\ravenpch.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\BuildImGUI.cpp" />
   </ItemGroup>
 </Project>

@@ -12,7 +12,7 @@
 namespace Raven 
 {
 
-	class RAVEN_API Application
+	class  Application
 	{
 
 	public:

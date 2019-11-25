@@ -10,7 +10,7 @@
 namespace Raven 
 {
 
-	class RAVEN_API Debug
+	class  Debug
 	{
 	public:
 		static void Init();

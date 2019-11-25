@@ -6,7 +6,7 @@
 
 namespace Raven
 {
-	class RAVEN_API WindowResizeEvent : public Event
+	class  WindowResizeEvent : public Event
 	{
 	public:
 		WindowResizeEvent(unsigned int width, unsigned int height) : width(width), height(height) {}
@@ -30,7 +30,7 @@ namespace Raven
 		unsigned int width, height;
 	};
 
-	class RAVEN_API WindowCloseEvent : public Event
+	class  WindowCloseEvent : public Event
 	{
 	public:
 		WindowCloseEvent() {}
@@ -42,7 +42,7 @@ namespace Raven
 		int GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
-	class RAVEN_API AppTickEvent : public Event
+	class  AppTickEvent : public Event
 	{
 	public:
 		AppTickEvent() {}
@@ -54,7 +54,7 @@ namespace Raven
 		int GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
-	class RAVEN_API AppUpdateEvent : public Event
+	class  AppUpdateEvent : public Event
 	{
 	public:
 		AppUpdateEvent() {}
@@ -65,7 +65,7 @@ namespace Raven
 		int GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
-	class RAVEN_API AppRenderEvent : public Event
+	class  AppRenderEvent : public Event
 	{
 	public:
 		AppRenderEvent() {}

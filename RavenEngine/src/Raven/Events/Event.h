@@ -24,7 +24,7 @@ namespace Raven
 		EventCategoryMouseButton = (1 << 4)
 	};
 
-	class RAVEN_API Event
+	class  Event
 	{
 	public:
 

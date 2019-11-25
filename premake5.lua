@@ -1,7 +1,12 @@
 workspace "RavenEngine"
 	architecture "x64"
 	startproject "Sandbox"
-    configurations { "Debug", "Release" }
+    configurations
+	{
+		"Debug",
+		"Release",
+		"Dist"
+	}
 
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}"
@@ -21,14 +26,16 @@ group ""
 
 project "RavenEngine"
 	location "RavenEngine"
+	kind "StaticLib"
 	language "C++"
-	kind "SharedLib"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-obj/" .. outputdir .. "/%{prj.name}")
 
 	pchheader "ravenpch.h"
-	pchsource "Raven/src/ravenpch.cpp"
+	pchsource "RavenEngine/src/ravenpch.cpp"
 
     files { "%{prj.name}/src/**.h", "%{prj.name}/src/**.cpp" }
 	
@@ -59,29 +66,36 @@ project "RavenEngine"
 
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines 
 		{
 			"RAVEN_PLATFORM_WINDOWS",
-			"RAVEN_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands { ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox") }
-
 	filter "configurations:Debug"
 		defines "RAVEN_DEBUG"
-		buildoptions "/MDd"
-		symbols "On"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "RAVEN_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "RAVEN_DIST"
+		runtime "Release"
+		optimize "on"
 
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-obj/" .. outputdir .. "/%{prj.name}")
@@ -96,21 +110,30 @@ project "Sandbox"
 		"%{IncludeDir.glm}"
 	}
 
+	defines 
+	{
+		"RAVEN_PLATFORM_WINDOWS"
+	}
 
-	links "RavenEngine"
+	links 
+	{
+		"RavenEngine"
+	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
-
-		defines 
-		{
-			"RAVEN_PLATFORM_WINDOWS"
-		}
-
-
+		
 	filter "configurations:Debug"
 		defines "RAVEN_DEBUG"
-		buildoptions "/MDd"
-		symbols "On"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "RAVEN_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "RAVEN_DIST"
+		runtime "Release"
+		optimize "on"

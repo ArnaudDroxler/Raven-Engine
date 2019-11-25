@@ -62,8 +62,7 @@ namespace Raven
 
 	void ImGuiLayer::OnImGUIRender()
 	{
-		bool show_demo_window = true;
-		ImGui::ShowDemoWindow(&show_demo_window);
+
 	}
 
 	void ImGuiLayer::Begin()

@@ -6,7 +6,7 @@
 
 namespace Raven
 {
-	class RAVEN_API MouseMovedEvent : public Event
+	class  MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(float mouseX, float mouseY) : mouseX(mouseX), mouseY(mouseY) {}
@@ -31,7 +31,7 @@ namespace Raven
 		float mouseX, mouseY;
 	};
 
-	class RAVEN_API MouseScrolledEvent : public Event
+	class  MouseScrolledEvent : public Event
 	{
 	public:
 
@@ -59,7 +59,7 @@ namespace Raven
 		float xOffset, yOffset;
 	};
 
-	class RAVEN_API MouseButtonEvent : public Event
+	class  MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return buttonId; }
@@ -72,7 +72,7 @@ namespace Raven
 		int buttonId;
 	};
 
-	class RAVEN_API MouseButtonPressedEvent : public MouseButtonEvent
+	class  MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int buttonId) : MouseButtonEvent(buttonId) {}
@@ -89,7 +89,7 @@ namespace Raven
 		}
 	};
 
-	class RAVEN_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class  MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int buttonId) : MouseButtonEvent(buttonId) {}

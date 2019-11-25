@@ -6,7 +6,7 @@
 
 namespace Raven
 {
-	class RAVEN_API KeyEvent : public  Event
+	class  KeyEvent : public  Event
 	{
 	public:
 
@@ -21,7 +21,7 @@ namespace Raven
 		int keyCode;
 	};
 
-	class RAVEN_API KeyPressedEvent : public KeyEvent
+	class  KeyPressedEvent : public KeyEvent
 	{
 	public:
 
@@ -42,7 +42,7 @@ namespace Raven
 		int repeatCount;
 	};
 
-	class RAVEN_API KeyReleasedEvent : public KeyEvent
+	class  KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int keycode) : KeyEvent(keycode) {}
@@ -60,7 +60,7 @@ namespace Raven
 	private:
 	};
 
-	class RAVEN_API KeyTypedEvent : public KeyEvent
+	class  KeyTypedEvent : public KeyEvent
 	{
 	public:
 		KeyTypedEvent(int keycode) : KeyEvent(keycode) {}

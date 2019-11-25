@@ -5,7 +5,7 @@
 
 namespace Raven {
 
-	class RAVEN_API Input 
+	class  Input 
 	{
 	public:
 
