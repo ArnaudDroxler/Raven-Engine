@@ -5,8 +5,8 @@
 #include "Raven/Events/KeyEvent.h"
 #include "Raven/Events/MouseEvent.h"
 #include "Raven/Events/ApplicationEvent.h"
-#include "glad/glad.h"
 
+#include "Platform/Renderer/OpenglContext.h"
 
 namespace Raven
 {
@@ -39,7 +39,7 @@ namespace Raven
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(window);
+		context->SwapBuffer();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
@@ -76,10 +76,8 @@ namespace Raven
 
 		GLFWWindowCount++;
 
-		glfwMakeContextCurrent(window);
-
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		RAVEN_CORE_ASSERT(status, "Could not intialize GLAD!");
+		context = new OpenglContext(window);
+		context->Init();
 
 		glfwSetWindowUserPointer(window, &windowData);
 

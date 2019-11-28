@@ -2,7 +2,7 @@
 
 #include "Raven/Core/Core.h"
 #include "Raven/Core/Window.h"
-
+#include "Platform/Renderer/GraphicContext.h"
 
 #include <GLFW/glfw3.h>
 
@@ -34,6 +34,7 @@ namespace Raven
 		void Shutdown();
 
 		GLFWwindow* window;
+		GraphicContext* context;
 
 		struct WindowData
 		{
