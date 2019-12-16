@@ -7,6 +7,9 @@
     <Filter Include="Platform\OpenGL">
       <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform\Renderer">
+      <UniqueIdentifier>{10BA9FA4-7CD0-9D3A-C547-295C319D6EC2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
@@ -24,6 +27,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Renderer\GraphicContext.h">
+      <Filter>Platform\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Renderer\OpenglContext.h">
+      <Filter>Platform\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -77,12 +86,13 @@
     </ClInclude>
     <ClInclude Include="src\RavenEngine.h" />
     <ClInclude Include="src\ravenpch.h" />
-    <ClInclude Include="src\Platform\Renderer\GraphicContext.h" />
-    <ClInclude Include="src\Platform\Renderer\OpenglContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\BuildImGUI.cpp">
       <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Renderer\OpenglContext.cpp">
+      <Filter>Platform\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>Platform\Windows</Filter>
@@ -106,6 +116,5 @@
       <Filter>Raven\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\ravenpch.cpp" />
-    <ClCompile Include="src\Platform\Renderer\OpenglContext.cpp" />
   </ItemGroup>
 </Project>

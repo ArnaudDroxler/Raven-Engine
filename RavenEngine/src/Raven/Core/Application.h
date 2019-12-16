@@ -41,6 +41,8 @@ namespace Raven
 
 		static Application* Instance;
 
+		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+
 		bool running;
 		bool minimized;
 	};
