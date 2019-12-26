@@ -86,6 +86,7 @@
     </ClInclude>
     <ClInclude Include="src\RavenEngine.h" />
     <ClInclude Include="src\ravenpch.h" />
+    <ClInclude Include="src\Platform\Renderer\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\BuildImGUI.cpp">
@@ -116,5 +117,6 @@
       <Filter>Raven\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\ravenpch.cpp" />
+    <ClCompile Include="src\Platform\Renderer\Shader.cpp" />
   </ItemGroup>
 </Project>

@@ -9,6 +9,8 @@
 
 #include "Raven/Core/LayerStack.h"
 
+#include "Platform/Renderer/Shader.h"
+
 namespace Raven 
 {
 
@@ -42,6 +44,7 @@ namespace Raven
 		static Application* Instance;
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 
 		bool running;
 		bool minimized;
